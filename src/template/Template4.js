@@ -17,7 +17,7 @@ const Template4 = ({ data }) => {
     return (
         <div
             className="template4-wrapper"
-            style={{ backgroundImage: `url(http://localhost:3000/uploads/${data.photo})` }}
+            style={{ backgroundImage: `url(https://dumblink-be.herokuapp.com/uploads/${data.photo})` }}
         >
             <div className="template4-card">
                 <div className="title">{data.title}</div>

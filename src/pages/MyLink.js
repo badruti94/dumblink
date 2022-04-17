@@ -107,7 +107,7 @@ const Link = (props) => {
         <div className='d-flex mb-5 justify-content-between' style={{ maxWidth: '95%' }} >
             <div className='d-flex' style={{ width: '25%' }} >
                 <div className='me-3' >
-                    <img src={`http://localhost:3000/uploads/${photo}`} alt="" height={60} />
+                    <img src={photo} alt="" height={60} />
                 </div>
                 <div className='me-5'  >
                     <div className='fw-bold fs-6' >{title}</div>
@@ -120,7 +120,7 @@ const Link = (props) => {
             </div>
             <div className='d-flex align-items-center text-secondary' >
                 <span
-                    onClick={() => { openNewTab(`http://localhost:3001/link/${uniqid}`) }}
+                    onClick={() => { openNewTab(`/link/${uniqid}`) }}
                     className='me-3 p-2' style={styles.action} > <i className='fa fa-eye fa-xl' ></i> </span>
                 <span
                     onClick={() => { navigate(`/edit-link/${type}/${id}`) }}

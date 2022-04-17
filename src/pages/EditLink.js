@@ -30,7 +30,7 @@ const Template1 = (props) => {
             const response = await API.get(`link/${props.id}`)
             const data = response.data.data.link
             setForm({ ...data, photo: '' })
-            setImg(`http://localhost:3000/uploads//${response.data.data.link.photo}`)
+            setImg(response.data.data.link.photo)
         })()
     }, [])
 
@@ -204,7 +204,7 @@ const Template2 = (props) => {
             const response = await API.get(`link/${props.id}`)
             const data = response.data.data.link
             setForm({ ...data, photo: '' })
-            setImg(`http://localhost:3000/uploads//${response.data.data.link.photo}`)
+            setImg(response.data.data.link.photo)
         })()
     }, [])
     const handleOnChange = e => {
@@ -372,7 +372,7 @@ const Template3 = (props) => {
             const response = await API.get(`link/${props.id}`)
             const data = response.data.data.link
             setForm({ ...data, photo: '' })
-            setImg(`http://localhost:3000/uploads//${response.data.data.link.photo}`)
+            setImg(response.data.data.link.photo)
         })()
     }, [])
     const handleOnChange = e => {
@@ -512,7 +512,7 @@ const Template4 = (props) => {
             const response = await API.get(`link/${props.id}`)
             const data = response.data.data.link
             setForm({ ...data, photo: '' })
-            setImg(`http://localhost:3000/uploads//${response.data.data.link.photo}`)
+            setImg(response.data.data.link.photo)
         })()
     }, [])
     const handleOnChange = e => {

@@ -17,7 +17,7 @@ const Template2 = ({ data }) => {
         <div className='wrapper' >
             <div className='content' >
                 <div className='profile' >
-                    <img src={`http://localhost:3000/uploads/${data.photo}`} alt="" />
+                    <img src={data.photo} alt="" />
                     <div className="title">{data.title}</div>
                     <div className="description">{data.description}</div>
                 </div>

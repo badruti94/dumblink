@@ -24,7 +24,7 @@ const DeleteModal = (props) => {
                         "Authorization": `Bearer ${token}`
                     },
                 };
-                await API.delete(`/profile/${localStorage.getItem('id')}`, config);
+                await API.delete(`/profile`, config);
                 localStorage.clear()
                 navigate('/')
             } catch (error) {
@@ -89,7 +89,21 @@ const Profile = () => {
 
     useEffect(() => {
         (async () => {
-            const response = await API.get(`profile/${localStorage.getItem('id')}`)
+            let token;
+            try {
+                token = JSON.parse(localStorage.token)
+            } catch (error) {
+                token = localStorage.token
+
+            }
+            const config = {
+                headers: {
+                    "Content-type": "application/json",
+                    "Authorization": `Bearer ${token}`
+                },
+            };
+
+            const response = await API.get(`profile`, config)
             setForm(response.data.data.profile)
         })()
     }, [])
@@ -120,7 +134,7 @@ const Profile = () => {
 
         (async () => {
             try {
-                await API.put(`/profile/${localStorage.getItem('id')}`, form, config)
+                await API.put(`/profile`, form, config)
                 setAlert({
                     display: true,
                     color: 'success',
