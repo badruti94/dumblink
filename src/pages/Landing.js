@@ -38,7 +38,6 @@ const Login = ({ isOpen, setIsOpen, setRegisterIsOpen }) => {
         try {
             const response = await API.post("/login", body, config);
 
-            localStorage.setItem('id', JSON.stringify(response.data.data.user.id))
             localStorage.setItem('login', JSON.stringify(true))
             localStorage.setItem('token', response.data.data.token)
 
@@ -139,7 +138,6 @@ const Register = ({ isOpen, setIsOpen, setLoginIsOpen }) => {
 
         try {
             const response = await API.post("/register", body, config);
-            localStorage.setItem('id', JSON.stringify(response.data.data.user.id))
             localStorage.setItem('login', JSON.stringify(true))
             localStorage.setItem('token', JSON.stringify(response.data.data.token))
             navigate('/template')

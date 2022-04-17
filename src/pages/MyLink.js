@@ -6,7 +6,21 @@ import { API } from '../config/api'
 
 
 const fetchData = async (setLinksFromServer, setLinks) => {
-    const response = await API.get(`/link?userId=${localStorage.getItem('id')}`);
+
+    let token;
+    try {
+        token = JSON.parse(localStorage.token)
+    } catch (error) {
+        token = localStorage.token
+
+    }
+    const config = {
+        headers: {
+            "Content-type": "application/json",
+            "Authorization": `Bearer ${token}`
+        },
+    };
+    const response = await API.get(`/link`, config);
     setLinksFromServer(response.data.data.links);
     setLinks(response.data.data.links)
 }
