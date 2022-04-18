@@ -64,7 +64,6 @@ const Template1 = (props) => {
         };
 
         const formData = new FormData();
-        formData.set("userId", localStorage.getItem('id'));
         formData.set("type", form.type);
         formData.set("title", form.title);
         formData.set("description", form.description);
@@ -237,7 +236,6 @@ const Template2 = (props) => {
         };
 
         const formData = new FormData();
-        formData.set("userId", localStorage.getItem('id'));
         formData.set("type", form.type);
         formData.set("title", form.title);
         formData.set("description", form.description);
@@ -405,7 +403,6 @@ const Template3 = (props) => {
         };
 
         const formData = new FormData();
-        formData.set("userId", localStorage.getItem('id'));
         formData.set("type", form.type);
         formData.set("description", form.description);
         formData.set("whatsapp", form.whatsapp);
@@ -545,7 +542,6 @@ const Template4 = (props) => {
         };
 
         const formData = new FormData();
-        formData.set("userId", localStorage.getItem('id'));
         formData.set("type", form.type);
         formData.set("title", form.title);
         formData.set("description", form.description);
